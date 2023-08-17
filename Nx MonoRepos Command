@@ -1,0 +1,10 @@
+npx create-nx-workspace@latest
+
+npm i @nrwl/react
+
+nx g @nrwl/react:application projectName --ts    (vite)
+
+
+    nx run projectName:serve
+
+nx g @nrwl/js:lib libraryName    (none)
