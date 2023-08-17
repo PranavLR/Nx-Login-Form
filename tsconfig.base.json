@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx/input-field": ["libs/input-field/src/index.ts"],
+      "@nx/password-match-validator": [
+        "libs/password-match-validator/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

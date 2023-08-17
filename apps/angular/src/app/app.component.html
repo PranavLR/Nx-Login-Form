@@ -1,1 +1,30 @@
-<nx-nx-welcome></nx-nx-welcome> <router-outlet></router-outlet>
+<form [formGroup]="createForm" class="password-form" (ngSubmit)="onSubmit()" #form="ngForm">
+    <div class="form-field">
+      <nx-input-field [controlName]="'email'" [type]="'email'"></nx-input-field>
+        <div class="error-message" 
+            *ngIf="(createForm.controls['email'].dirty || form.submitted) &&
+                    !createForm.controls['email'].valid"
+        > Please Enter A Valid Email.</div>
+    </div>
+    <div class="form-field">
+      <nx-input-field [controlName]="'password'" [type]="'password'"></nx-input-field>
+
+        <div class="error-message"
+            *ngIf="(createForm.controls['password'].dirty || form.submitted) &&
+            !createForm.controls['password'].valid"
+        > Minimun Length is 8.</div>
+    </div>
+  
+    <div class="form-field">
+      <nx-input-field [controlName]="'confirmPassword'" [type]="'password'"></nx-input-field>
+        <div class="error-message"
+            *ngIf="(createForm.controls['password'].dirty || form.submitted) &&
+            createForm.hasError('passwordMatch')"
+        > Passwords do not match.</div>
+    </div>
+  
+    <button type="submit" [disabled]="createForm.invalid" class="submit-button">Submit</button>
+  </form>
+  
+
+<!-- <nx-nx-welcome></nx-nx-welcome> <router-outlet></router-outlet> -->
